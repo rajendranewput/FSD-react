@@ -1,0 +1,16 @@
+services:
+  react:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: food-standard-react
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/app
+    networks:
+      - app-network
+  
+networks:
+  app-network:
+    driver: bridge
